@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# is a factors challenge
+
+check_factor()
+{
+        if [ $3 -ne 3 ];
+        then
+
+                args=("$@")
+                count=0
+                num2=1
+                for a in ${args[*]};
+                do
+                        if [ $count -gt 1 ];
+                        then
+                                num2=$(echo $a*$num2 | bc)
+                        fi
+                        count=$((count + 1))
+                done
+          
